@@ -2,6 +2,31 @@
 
 Use these patterns as building blocks. Trim sections that do not apply, and preserve the user's language and intent.
 
+## Compile-then-Execute Pattern
+
+Use when the current Agent should execute the task after compiling the user's rough request:
+
+```markdown
+I will first translate your rough request into a structured execution brief, then execute it in the current environment.
+
+Compiled Task Brief:
+- Objective:
+- Context:
+- Inputs / discovery plan:
+- Scope:
+- Constraints:
+- Approval gates:
+- Acceptance criteria:
+- Verification:
+
+Execution Plan:
+1. Inspect relevant context/files/tools.
+2. Make the smallest coherent change or produce the requested artifact.
+3. Stop and ask before destructive, public, expensive, irreversible, external, or production-affecting actions.
+4. Verify the result.
+5. Report what changed, what was verified, and remaining risks.
+```
+
 ## Universal Agent Prompt Shell
 
 ```markdown
@@ -57,16 +82,18 @@ Help me clarify:
 - Risks or unacceptable behaviors
 
 Ask only the highest-leverage questions first. Do not turn this into a rigid questionnaire.
-After alignment, produce a copy-ready prompt for [target Agent/model].
+After alignment, either execute in the current environment if safe or produce a copy-ready prompt for [target Agent/model].
 ```
 
 ## Claude Code / Codex Pattern
 
+Use this for same-runtime execution in Claude Code/Codex, or adapt it for Prompt-Only Mode when the user explicitly asks for a prompt.
+
 ```markdown
-You are working in an existing codebase.
+You are working in the current codebase.
 
 Goal:
-[Desired code or product outcome.]
+[Desired code, review, document, or product outcome.]
 
 Repo context:
 - Path/repo: [repo path or "current workspace"]
@@ -75,12 +102,13 @@ Repo context:
 - Desired behavior: [target behavior]
 
 Instructions:
-1. Inspect the relevant code before editing.
-2. Keep changes minimal and scoped to the requested behavior.
-3. Preserve existing user changes; do not revert unrelated work.
-4. Follow existing project patterns, naming, architecture, and tests.
-5. Ask before destructive actions, publishing, deploying, or broad refactors.
-6. Run relevant tests/checks if available.
+1. Inspect the relevant code and docs before deciding.
+2. Infer safely from repository context instead of asking for details that can be discovered.
+3. Keep changes minimal and scoped to the requested behavior.
+4. Preserve existing user changes; do not revert unrelated work.
+5. Follow existing project patterns, naming, architecture, and tests.
+6. Ask before destructive actions, publishing, deploying, or broad refactors.
+7. Run relevant tests/checks if available.
 
 Done when:
 - [Acceptance criteria]
@@ -226,22 +254,25 @@ Rules:
 ## Evaluation Harness Pattern
 
 ```markdown
-Evaluate whether ai-collaboration-translator improves downstream AI/Agent output.
+Evaluate whether ai-collaboration-translator improves AI/Agent output.
 
 Use 12-20 realistic test cases. For each case:
-1. Generate baseline output from the raw prompt.
-2. Generate skill-path prompt using ai-collaboration-translator.
-3. Generate simulated target-Agent output from the skill-path prompt.
-4. Score baseline and skill-path outputs with the downstream output rubric.
-5. Score the generated prompt with the prompt quality rubric.
-6. Report average scores, uplift, regressions, failure modes, and recommended Skill changes.
+1. Classify whether it should use Prompt-Only Mode, Compile-then-Execute Mode, or Demand Alignment Mode.
+2. Generate baseline output from the raw prompt.
+3. Generate skill-path Prompt A / execution brief or copy-ready prompt.
+4. If executable, simulate same-Agent execution from Prompt A; if prompt-only, simulate target-Agent output from the copy-ready prompt.
+5. Score baseline and skill-path outputs with the downstream/same-Agent output rubric.
+6. Score Prompt A or the copy-ready prompt with the prompt/brief quality rubric.
+7. Report average scores, uplift, regressions, mode-selection failures, and recommended Skill changes.
 
 Primary metric:
-Skill Uplift = downstream_output_score(skill_path) - downstream_output_score(baseline_path)
+Skill Uplift = output_score(skill_path) - output_score(baseline_path)
 ```
 
 ## Anti-Patterns
 
+- Stopping at a copy-ready prompt in Claude Code/Codex/Cursor when the user expected current-Agent execution.
+- Executing when the user explicitly asked for "只生成 Prompt", "不要执行", or a prompt for another Agent.
 - Vague verbs without criteria: "improve this", "make it better", "optimize everything".
 - Unbounded scope unless truly needed.
 - Missing verification method.

@@ -1,4 +1,4 @@
 interface:
   display_name: "AI Collaboration Translator"
-  short_description: "Turn rough ideas into agent-ready prompts"
-  default_prompt: "Use $ai-collaboration-translator to align my rough idea and generate a prompt for another AI agent."
+  short_description: "Turn rough ideas into agent execution briefs"
+  default_prompt: "Use $ai-collaboration-translator to align my rough idea, compile an execution brief, and execute when safe."
