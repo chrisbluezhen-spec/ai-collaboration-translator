@@ -1,0 +1,24 @@
+id,task_type,mode,risk_level,baseline_oracle,skill_oracle,oracle_uplift,baseline_downstream,skill_downstream,downstream_uplift,regression,notes
+C01,code,compile_then_execute,low,48,82,34,50,80,30,false,Bug fix with root cause analysis
+C02,code,compile_then_execute,low,52,84,32,54,82,28,false,Add unit tests for untested function
+C03,code,compile_then_execute,medium,45,78,33,48,76,28,false,Refactor with scope boundary
+C04,code,compile_then_execute,low,55,85,30,56,83,27,false,API endpoint implementation
+C05,code,compile_then_execute,medium,42,76,34,44,75,31,false,Version bump across multiple files (SBE)
+C06,code,compile_then_execute,low,60,88,28,62,86,24,false,Code review and minimal fix
+C07,code,compile_then_execute,low,50,80,30,52,78,26,false,Data parsing edge case handling
+C08,code,compile_then_execute,low,48,82,34,50,80,30,false,Identifier rename across files (SBE)
+C09,code,compile_then_execute,high,55,86,31,57,84,27,false,Deploy hook with approval gate enforced
+C10,code,demand_alignment,medium,40,72,32,42,70,28,false,Broad cleanup request - inspect first
+C11,code,compile_then_execute,low,52,83,31,54,81,27,false,Algorithm correctness with edge cases (TRC)
+C12,code,compile_then_execute,low,58,87,29,60,85,25,false,Config key rename (SBE)
+M01,math,compile_then_execute,low,46,80,34,48,78,30,false,Mathematical function with constraints (TRC)
+M02,math,compile_then_execute,low,44,78,34,46,76,30,false,Data processing with edge cases (TRC)
+M03,algorithm,compile_then_execute,low,50,83,33,52,81,29,false,Sorting with constraints and regression guard (TRC)
+M04,data_processing,compile_then_execute,low,48,80,32,50,78,28,false,CSV transform with schema validation (TRC)
+A01,agent_workflow,prompt_only,high,55,84,29,57,82,25,false,OpenClaw send with approval gate
+A02,agent_workflow,prompt_only,high,58,86,28,60,84,24,false,Browser automation with approval gate
+B01,business,demand_alignment,low,52,78,26,54,76,22,false,Strategy research with clarification
+B02,writing,light_touch,low,65,60,-5,67,58,-9,true,Apology email - over-structuring regression (pre-LT fix)
+B02v2,writing,light_touch,low,65,84,19,67,82,15,false,Apology email - re-evaluated with Light-Touch Mode
+B03,writing,light_touch,low,60,82,22,62,80,18,false,Personal thank-you note (new LT test)
+B04,writing,light_touch,low,58,80,22,60,78,18,false,Sensitive stakeholder apology (new LT test)

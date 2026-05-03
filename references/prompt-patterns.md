@@ -269,6 +269,81 @@ Primary metric:
 Skill Uplift = output_score(skill_path) - output_score(baseline_path)
 ```
 
+## Light-Touch Pattern
+
+Use for emotional, personal, or tone-first writing where structure would feel cold or corporate.
+
+```markdown
+Help me write [message type] to [recipient].
+
+Context:
+[Relationship, what happened, what I want the reader to feel or do.]
+
+My tone should be:
+[honest / warm / apologetic / direct / personal — user's own words preferred]
+
+Key points to convey:
+- [point 1]
+- [point 2]
+
+Avoid: corporate language, bullet lists in the message, generic phrases.
+Preserve: my voice, sincerity, any specific phrases I care about.
+
+Length: [short / medium / as long as needed to feel genuine]
+```
+
+## Search-Before-Edit Pattern
+
+Use when renaming identifiers, keys, paths, or values that appear across multiple files.
+
+```markdown
+You are about to rename / replace [identifier/key/value] in this codebase.
+
+Step 1 — Search:
+Find all occurrences of [old name] across the repo. Report the list before editing.
+
+Step 2 — Edit:
+Replace all intended occurrences in one pass.
+Explicitly skip: [list of locations that should NOT be changed, if any]
+
+Step 3 — Verify:
+After editing, search again for [old name] to confirm no unintended occurrences remain.
+
+Step 4 — Report:
+List changed files, skipped files, and remaining occurrences with rationale.
+```
+
+## Testable Requirement Pattern
+
+Use for code, math, algorithm, or data-processing tasks.
+
+```markdown
+You are implementing / fixing [task description].
+
+Expected behavior:
+- Input: [concrete example]
+- Output: [concrete expected result]
+
+Edge cases that must not break:
+- [edge case 1]
+- [edge case 2]
+
+Constraints:
+- [time complexity / memory / precision / format / schema]
+
+Regression guard:
+- [existing behavior that must continue to work]
+
+Scope:
+- Fix only the stated problem. Do not refactor unrelated code.
+- If you discover a related issue, report it but do not fix it unless asked.
+
+Done when:
+- The above input/output example produces the correct result.
+- Edge cases pass.
+- Existing tests still pass or inability to run them is explained.
+```
+
 ## Anti-Patterns
 
 - Stopping at a copy-ready prompt in Claude Code/Codex/Cursor when the user expected current-Agent execution.

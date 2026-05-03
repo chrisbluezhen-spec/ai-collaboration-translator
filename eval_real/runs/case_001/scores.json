@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 38,
+    "correctness": 25,
+    "usability": 16,
+    "scope": 11,
+    "total": 90,
+    "notes": "Strong oracle alignment: strict regex with boundaries rejects garbage like 'a@.com'; dedup is opt-in (unique=False default), so no unrequested normalization. All hidden assertions pass. Very thorough but the long Brief plus extensive self-tests is somewhat over-engineered for a one-line ask."
+  },
+  "B": {
+    "oracle_hit": 28,
+    "correctness": 23,
+    "usability": 15,
+    "scope": 11,
+    "total": 77,
+    "notes": "Hits must-haves and assertions still pass on lowercase inputs, but performs unrequested normalization (lowercasing + dedup) as the only behavior with no opt-out — directly hits a 'should avoid' even though it's documented. Brief overhead is heavy for a trivial task."
+  },
+  "C": {
+    "oracle_hit": 36,
+    "correctness": 24,
+    "usability": 19,
+    "scope": 15,
+    "total": 94,
+    "notes": "Tight, minimal solution that does exactly what was asked: function + standard regex + findall. No unrequested normalization, no clarification questions, briefly flags potential extensions (RFC 5322, dedup, lowercase). All hidden assertions pass; regex is the common pragmatic one."
+  },
+  "D": {
+    "oracle_hit": 38,
+    "correctness": 24,
+    "usability": 18,
+    "scope": 13,
+    "total": 93,
+    "notes": "Clean function with type hints, empty/None-safe guard, no unrequested normalization, mentions dedup as optional follow-up. All hidden assertions pass. Slightly more commentary than necessary but well within scope."
+  },
+  "E": {
+    "oracle_hit": 30,
+    "correctness": 23,
+    "usability": 15,
+    "scope": 11,
+    "total": 79,
+    "notes": "Solid code and well-documented, but performs unrequested dedup (case-insensitive) as default with no opt-out, which is a 'should avoid' item even though flagged. Heavy Brief for a simple ask. Hidden assertions still pass because test inputs have no duplicates."
+  }
+}

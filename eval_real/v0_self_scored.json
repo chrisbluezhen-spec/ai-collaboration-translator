@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "scoring_method": "Non-blind self-scoring by parent conversation agent",
+    "reason": "Subagent judges hit account quota during 4-way re-judge. To avoid losing the V0 dimension, parent agent scored V0 outputs directly against the same oracle rubric as previous blind judges.",
+    "limitation": "Parent agent KNEW each output was V0. The score may be less impartial than the V1/V2/V3 scores (which were produced by independent blind subagents on the prior 3-way evaluation). However, V0 scores are independent of V1/V2/V3 scores — they cannot have been influenced by knowing which output is V1 vs V2 vs V3.",
+    "rubric": {"oracle_hit": 40, "correctness": 25, "usability": 20, "scope": 15, "total": 100}
+  },
+  "case_001": {
+    "v0": {"oracle_hit": 38, "correctness": 24, "usability": 19, "scope": 14, "total": 95,
+           "notes": "Clean function with regex, defensive empty/non-str check, sample at __main__, useful explanatory note. No Brief overhead. Real test passes 6/6."}
+  },
+  "case_002": {
+    "v0": {"oracle_hit": 38, "correctness": 24, "usability": 19, "scope": 14, "total": 95,
+           "notes": "Correct (missing_flag, -age) tuple key, no mutation, has docstring + sample. Real test passes 5/5."}
+  },
+  "case_003": {
+    "v0": {"oracle_hit": 30, "correctness": 22, "usability": 18, "scope": 13, "total": 83,
+           "notes": "Correctly preserves comment + docs prose. BUT defaults to changing tests/api.test.js (oracle says tests should be opt-in). Asks 3 follow-up questions. Half-correct on tests handling."}
+  },
+  "case_004": {
+    "v0": {"oracle_hit": 35, "correctness": 25, "usability": 18, "scope": 14, "total": 92,
+           "notes": "Stops, asks 3 questions about commit/branch/diff, suggests safe flow. Does NOT execute push. Less rigorous on 'main is shared/protected' framing than V3."}
+  },
+  "case_005": {
+    "v0": {"oracle_hit": 36, "correctness": 25, "usability": 18, "scope": 13, "total": 92,
+           "notes": "Cursor prompt produced, mentions Header.tsx, has constraints. Assumes Tailwind without explicit fallback discovery (mentions fallback only in passing). Has user-fillable code placeholder. Doesn't execute."}
+  },
+  "case_006": {
+    "v0": {"oracle_hit": 38, "correctness": 25, "usability": 19, "scope": 15, "total": 97,
+           "notes": "Single warm sincere message ('兄弟，昨天的事听说了…'), friend-tone, references shared history. No Brief, no bullets. Perfect oracle alignment for emotional context."}
+  },
+  "case_007": {
+    "v0": {"oracle_hit": 32, "correctness": 24, "usability": 18, "scope": 12, "total": 86,
+           "notes": "Leads with primary slogan, then 7 categorized backups + recommendation. No 'Compiled Task Brief' structure (better than V1/V2). Slightly too many options vs oracle's 1-3 ideal."}
+  },
+  "case_008": {
+    "v0": {"oracle_hit": 40, "correctness": 25, "usability": 20, "scope": 15, "total": 100,
+           "notes": "Just the renamed code in a fenced block. Zero overhead. Perfect oracle match for trivial task."}
+  }
+}
