@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 15,
+    "correctness": 22,
+    "usability": 10,
+    "scope": 3,
+    "total": 50,
+    "notes": "展示完整 Compiled Task Brief（Objective/Context/Assumptions/Scope/Acceptance Criteria/What not to do）+ Execution + 建议下一步，对一个 slogan 这种轻量任务是严重 scope 越界。中英各 4 条 slogan 本身质量不错且短，但用户要的是直接交付，被淹没在大量过程文档里，可用性差。"
+  },
+  "B": {
+    "oracle_hit": 38,
+    "correctness": 24,
+    "usability": 19,
+    "scope": 14,
+    "total": 95,
+    "notes": "开门见山：'几个方向，挑一句你最有感觉的'，6 条全部短促有力（≤10字），'想到，就记到。'/'笔记，从此会思考。' 等都很记忆点。无 Brief、无方法论说明，仅末尾轻量 follow-up 问调性/人群。最贴 hidden oracle。"
+  },
+  "C": {
+    "oracle_hit": 33,
+    "correctness": 22,
+    "usability": 17,
+    "scope": 13,
+    "total": 85,
+    "notes": "5 条按风格分组的 slogan，无 Brief，结构清晰。'笔记，从此会思考。' 等很到位。'你的第二个大脑，已上线' 稍长但仍可接受。末尾问两个收敛问题略偏咨询感，不算严重。"
+  },
+  "D": {
+    "oracle_hit": 33,
+    "correctness": 22,
+    "usability": 17,
+    "scope": 13,
+    "total": 85,
+    "notes": "首句直接给主推 slogan，再按风格分组给 7 条备选，末尾再次推荐首选。无 Brief。'不只是笔记，是会思考的第二大脑' 偏长，整体偏多 slogan 但可读性 ok。"
+  },
+  "E": {
+    "oracle_hit": 18,
+    "correctness": 23,
+    "usability": 11,
+    "scope": 5,
+    "total": 57,
+    "notes": "前置 Compiled Task Brief（Objective/Style/Tone/Deliverable/Assumptions/Verification）后才给 7 条 slogan。slogan 本身质量很高（'笔记会思考。'/'想到，就记下。'）且分组有点评，但对 slogan 任务展示完整 Brief 是明显 scope 越界，使用户拿到结果的路径变长。"
+  }
+}

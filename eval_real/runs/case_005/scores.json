@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 33,
+    "correctness": 22,
+    "usability": 17,
+    "scope": 11,
+    "total": 83,
+    "notes": "结构清晰、可直接复制，包含 Tailwind 上下文与 TS/类型约束；但建议新增主题切换按钮、useState/useEffect、写入 localStorage，并要求一并改 tailwind.config，明显扩张了原本'只给 Header.tsx 加深色支持'的范围。整体可用，约束不够收敛。"
+  },
+  "B": {
+    "oracle_hit": 38,
+    "correctness": 24,
+    "usability": 19,
+    "scope": 14,
+    "total": 95,
+    "notes": "可复制的高质量 Prompt，含上下文发现、样式方案优先级、严格 scope（只改 Header 与其直接样式文件、禁新建 Provider/切换按钮）、WCAG AA 与无闪烁约束、显式验收标准与禁止项。文件名、范围、约束与 do-not 全齐，且不执行。"
+  },
+  "C": {
+    "oracle_hit": 37,
+    "correctness": 23,
+    "usability": 18,
+    "scope": 14,
+    "total": 92,
+    "notes": "结构化、紧凑的 Prompt：目标、上下文发现、范围、要求、验收、不要做的事齐备；样式方案识别与最小改动、不引入新依赖、不重构无关代码都点到。略短于 B/D，但同样可直接复制使用，不执行。"
+  },
+  "D": {
+    "oracle_hit": 38,
+    "correctness": 24,
+    "usability": 19,
+    "scope": 14,
+    "total": 95,
+    "notes": "最详尽的 Prompt 之一：Objective/Context/Scope/Constraints/Acceptance/What not to do/Execution 七段齐全，强调'不要新建主题系统'、不硬编码颜色、像素级保留浅色、找两个现有组件做参考，并在缺乏基础设施时停下询问。可复制、聚焦 Header.tsx、不执行。"
+  },
+  "E": {
+    "oracle_hit": 37,
+    "correctness": 23,
+    "usability": 18,
+    "scope": 14,
+    "total": 92,
+    "notes": "结构非常工整：Objective/Context/Inputs/Scope/Constraints/Acceptance/What NOT/Reporting Format。包含主题方案识别优先级、WCAG AA、不新建 context、不引入依赖、报告格式。略输 B/D 在'参考已有组件、最小 token 增量'等深度细节上，但同样可直接复制、聚焦 Header.tsx、不执行。"
+  }
+}

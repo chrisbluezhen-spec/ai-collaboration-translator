@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 38,
+    "correctness": 25,
+    "usability": 20,
+    "scope": 15,
+    "total": 98,
+    "notes": "一句极简确认 + 代码块，3 处 x 全部替换为 count。零 Brief、零废话，完美契合 oracle 对 trivial 任务的期望：简洁、直给、准确。"
+  },
+  "B": {
+    "oracle_hit": 5,
+    "correctness": 25,
+    "usability": 8,
+    "scope": 1,
+    "total": 39,
+    "notes": "为 4 行重命名写了 Objective/Context/Scope/Constraints/Acceptance/What-not-to-do/Verification/Report 全套 Compiled Task Brief，严重 over-engineering。代码本身正确，但 oracle 明确 PENALIZE heavy Brief，scope 违规最严重。"
+  },
+  "C": {
+    "oracle_hit": 40,
+    "correctness": 25,
+    "usability": 18,
+    "scope": 15,
+    "total": 98,
+    "notes": "只返回代码块，无任何额外文字。最极致的简洁，完全符合 oracle。usability 轻扣 1 分因完全没有确认语，但在 trivial 任务上反而是最优解。"
+  },
+  "D": {
+    "oracle_hit": 7,
+    "correctness": 25,
+    "usability": 10,
+    "scope": 2,
+    "total": 44,
+    "notes": "完整 Compiled Task Brief + Execution + 逐处替换列表。代码正确（3 处全中），但对 4 行任务而言是明显的 ceremony 过剩，scope 严重违规。Brief 内甚至出现 'Search-Before-Edit' 这种跨文件搜索的术语，脱离上下文。"
+  },
+  "E": {
+    "oracle_hit": 8,
+    "correctness": 25,
+    "usability": 11,
+    "scope": 3,
+    "total": 47,
+    "notes": "同样写了完整 Brief（稍短于 B/D），末尾主动提议 '顺手优化成 count = len(items)'——虽然留了选择权，但 oracle 的 What-not-to-do 明确禁止此方向建议。代码本体正确，scope 依旧违规。"
+  }
+}

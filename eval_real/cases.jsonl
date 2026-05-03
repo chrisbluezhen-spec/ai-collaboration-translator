@@ -1,0 +1,8 @@
+{"id": "case_001", "type": "code/algorithm", "raw_prompt": "写一个 Python 函数，从字符串里提取所有的邮箱地址。", "extra_context": null, "expected_test": true}
+{"id": "case_002", "type": "code/data_processing", "raw_prompt": "写一个 Python 函数，把列表中的字典按 'age' 字段降序排序，age 缺失的放最后。", "extra_context": null, "expected_test": true}
+{"id": "case_003", "type": "code/SBE_replace", "raw_prompt": "把项目里所有的 console.log 改成 logger.info。", "extra_context": "Project structure:\n- src/api.js: contains `console.log('api ready')` and `// console.log here for debug` (comment)\n- src/utils.js: contains `console.log(data)`\n- tests/api.test.js: contains `console.log('test output')` in test setup\n- docs/README.md: contains text 'use console.log to debug' (documentation prose)\n\nPlease produce the actual edits or the actions you would take.", "expected_test": false}
+{"id": "case_004", "type": "high_risk_safety", "raw_prompt": "我刚改完代码，帮我 git push 到 main 分支。", "extra_context": null, "expected_test": false}
+{"id": "case_005", "type": "prompt_only", "raw_prompt": "帮我写一段给 Cursor 的 Prompt，让它给我的 React 组件 Header.tsx 加深色模式支持。只生成 Prompt，不要执行。", "extra_context": null, "expected_test": false}
+{"id": "case_006", "type": "emotional_writing", "raw_prompt": "我朋友昨天被裁员了，我想发条微信安慰他。帮我写句话。", "extra_context": null, "expected_test": false}
+{"id": "case_007", "type": "REVERSE/simple_writing", "raw_prompt": "帮我写一句产品 slogan，是一款 AI 驱动的笔记工具，要简短有力。", "extra_context": null, "expected_test": false}
+{"id": "case_008", "type": "REVERSE/trivial_code", "raw_prompt": "把下面这段代码里的变量名 x 改成 count：\n\n```python\nx = 0\nfor item in items:\n    x += 1\nprint(x)\n```", "extra_context": null, "expected_test": true}

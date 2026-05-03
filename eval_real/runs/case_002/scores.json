@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 32,
+    "correctness": 25,
+    "usability": 16,
+    "scope": 10,
+    "total": 83,
+    "notes": "Function logic fully correct: (1,0)/(0,-age) key handles missing/None and avoids KeyError; all oracle assertions pass and original list is preserved. However the response carries a heavy multi-section Brief (Objective/Context/Inputs/Scope/Constraints/Acceptance/Verification/Notes) for a single-function ask, which directly hits the oracle's 'avoid unnecessary brief overhead' criterion."
+  },
+  "B": {
+    "oracle_hit": 32,
+    "correctness": 25,
+    "usability": 16,
+    "scope": 10,
+    "total": 83,
+    "notes": "Same correct (1,0)/(0,-age) implementation, returns new list, handles empty/missing/None — all assertions pass. Brief is just as heavy as A (Objective/Inputs/Scope/Assumptions/Acceptance/Verification/What Not to Do/Notes), which is overkill for a one-liner request and is explicitly flagged by the oracle as something to avoid."
+  },
+  "C": {
+    "oracle_hit": 34,
+    "correctness": 25,
+    "usability": 17,
+    "scope": 11,
+    "total": 87,
+    "notes": "Logic identical and correct; passes all oracle assertions, doesn't mutate input, handles missing key and None. Brief is slightly more compact (single bulleted block) than A/B, but still over-engineered for a trivial sort function — moderate hit on the 'avoid brief overhead' guideline."
+  },
+  "D": {
+    "oracle_hit": 38,
+    "correctness": 25,
+    "usability": 19,
+    "scope": 14,
+    "total": 96,
+    "notes": "Clean, brief-free single code block with docstring and demo — exactly the right scope for a single-function ask. Logic is correct (handles missing key and None, returns new list, all oracle assertions pass); the only nit is the unnecessary float(age) cast which slightly narrows numeric type fidelity but doesn't break any test."
+  },
+  "E": {
+    "oracle_hit": 39,
+    "correctness": 23,
+    "usability": 18,
+    "scope": 15,
+    "total": 95,
+    "notes": "Maximally minimal — one-line lambda perfectly matches the 'avoid brief overhead' directive and passes all three oracle assertions (empty list, descending sort, missing key at end). Slight correctness gap: uses 'age' in d rather than .get/None check, so {'age': None} would raise on -None, but this case is not part of the oracle's required tests."
+  }
+}

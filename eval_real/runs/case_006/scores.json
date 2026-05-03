@@ -1,0 +1,42 @@
+{
+  "A": {
+    "oracle_hit": 36,
+    "correctness": 24,
+    "usability": 18,
+    "scope": 14,
+    "total": 92,
+    "notes": "干净的微信话术，3句话，温暖直接，朋友口吻；唯一的小问题是有'可以发这条试试'的引导语和结尾'再帮你调一版'的小尾巴，但完全没有 Brief/bullet 的脚手架，整体非常贴需求。"
+  },
+  "B": {
+    "oracle_hit": 40,
+    "correctness": 25,
+    "usability": 20,
+    "scope": 15,
+    "total": 100,
+    "notes": "几乎是完美范例：单条消息，'兄弟'开头直呼，3句话，口语化、共情、给陪伴而非说教，完全没有任何脚手架/前言/后缀，复制即发，命中所有 oracle 要求。"
+  },
+  "C": {
+    "oracle_hit": 8,
+    "correctness": 12,
+    "usability": 8,
+    "scope": 3,
+    "total": 31,
+    "notes": "严重违规：完整的 'Compiled Task Brief' + bullet lists + Objective/Context/Constraints/Acceptance + 3个版本 + 反问追加信息。明令禁止的脚手架全套上场。虽然版本1-3的措辞本身不错，但被淹没在结构化文档里，对一个'帮我写句话'的微信请求完全 over-engineered。scope 重罚。"
+  },
+  "D": {
+    "oracle_hit": 38,
+    "correctness": 24,
+    "usability": 19,
+    "scope": 15,
+    "total": 96,
+    "notes": "纯消息，无脚手架，'兄弟'开头，温暖、共情、给陪伴选项；唯一小瑕疵是'你这几年拼得有多狠我都看在眼里'稍微有点用力/略长，但仍然是高质量、可直发的朋友口吻。"
+  },
+  "E": {
+    "oracle_hit": 8,
+    "correctness": 12,
+    "usability": 8,
+    "scope": 3,
+    "total": 31,
+    "notes": "与 C 同类问题：完整的 Compiled Task Brief + bullet 化的 Objective/Context/Scope/Constraints/Acceptance + 3 个版本 + 追问信息。oracle 明确禁止 'Compiled Task Brief' 和 bullet structure，重罚 scope。版本 A/B/C 本身写得不错，但整体方案对一个简单的微信安慰请求严重 overkill。"
+  }
+}
